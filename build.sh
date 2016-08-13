@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t my/kafka:latest .
+docker build -t home/kafka:latest .
