@@ -1,0 +1,18 @@
+kafka:
+    image: my/kafka
+    ports:
+        - "9092:9092"
+    environment:
+        - KAFKA_ADVERTISED_HOST_NAME=kk1.home
+        - KAFKA_ZOOKEEPER_CONNECT=zk1.home,zk2.home,zk3.home
+        - KAFKA_BROKER_ID=2001
+        - KAFKA_ADVERTISED_PORT=9092
+        - KAFKA_MESSAGE_MAX_BYTES=104857600
+        - KAFKA_MAX_MESSAGE_BYTES=104857600
+        - KAFKA_REPLICA_FETCH_MAX_BYTES=104857600
+        - KAFKA_DELETE_TOPIC_ENABLE=true
+        - KAFKA_NUM_PARTITIONS=3
+        - KAFKA_RESERVED_BROKER_MAX_ID=3000
+        - KAFKA_BROKER_ID_GENERATION_ENABLE=false
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
